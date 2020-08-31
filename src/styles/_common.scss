@@ -4,10 +4,82 @@ body {
     margin: 0;
     padding-top: 50px;
     background-color: $snow-fall;
+    color: $naval;
     font-family: sans-serif;
 }
 
 ul {
     margin: 0;
     padding: 0;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+a {
+    color: $naval;
+    text-decoration: none;
+
+    &:hover {
+        color: $debonair;
+    }
+}
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.fa-2x {
+    font-size: 2em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+.phone-number:after {
+    content: "+36 (20) 3369-400";
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.contact h2 {
+    color: $naval;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.contact-row h3 {
+    margin: .5rem 0;
+    font-size: 1.75em;
+    transition: color 225ms;
+}
+
+@media (min-width: 768px) {
+    .contact-row > div {
+        padding: 20px 0;
+    }
 }
