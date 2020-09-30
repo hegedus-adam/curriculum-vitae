@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+dist: trusty
+script: 
+  - npm run clean
+  - npm run build
+  
