@@ -1,9 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery } from 'gatsby';
-import { query } from './seo.query';
+import { useStaticQuery, graphql } from 'gatsby';
 
+const seoQuery = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultDescription: description
+        siteUrl: url
+      }
+    }
+  }
+`;
 
 export const SEO = () => {
   const {
@@ -14,7 +24,7 @@ export const SEO = () => {
         siteUrl
       }
     }
-  } = useStaticQuery(query);
+  } = useStaticQuery(seoQuery);
 
   const seo = {
     title: defaultTitle,
