@@ -1,17 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Navigation } from '../components/navigation/navigation';
-import { Contact } from '../components/contact/contact';
+import { SEO, Navigation, Contact } from '../components';
 import '../styles/index.scss';
 
 export const Home = () => (
-    <>
-        <Helmet>
-            <title>Adam Hegedus - Lead Software Engineer</title>
-            <meta charSet="utf-8" />
-            <meta name="description" content="Adam Hegedus, Senior Software Engineer"></meta>
-            <link rel="canonical" href="https://hegedus-adam.github.io/"></link>
-        </Helmet>
+    <React.Fragment>
+        <SEO></SEO>
         <Navigation></Navigation>
         <div className="container">
             <div className="row">
@@ -21,7 +14,7 @@ export const Home = () => (
                 </div>
             </div>
         </div>
-    </>
+    </React.Fragment>
 );
 
 export default Home;
