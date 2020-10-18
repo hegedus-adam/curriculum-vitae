@@ -15,35 +15,35 @@ const seoQuery = graphql`
   }
 `;
 
-export const SEO = () => {
+export const SEO = ({ title, description }) => {
   const {
     site: {
       siteMetadata: {
         defaultTitle,
         defaultDescription,
-        siteUrl
-      }
-    }
+        siteUrl,
+      },
+    },
   } = useStaticQuery(seoQuery);
 
   const seo = {
-    title: defaultTitle,
-    description: defaultDescription,
-    url: siteUrl
+    title: defaultTitle || title,
+    description: defaultDescription || description,
+    url: siteUrl,
   };
 
   return (
     <Helmet
       title={seo.title}
     >
-      <html lang="en"></html>
+      <html lang="en" />
       <meta charSet="utf-8" />
-      <link rel="canonical" href={seo.url}></link>
-      <meta name="description" content={seo.description}></meta>
+      <link rel="canonical" href={seo.url} />
+      <meta name="description" content={seo.description} />
 
-      {seo.url && <meta property="og:url" content={seo.url} ></meta>}
-      {seo.title && <meta property="og:title" content={seo.title} ></meta>}
-      {seo.description && <meta property="og:description" content={seo.description} ></meta>}
+      {seo.url && <meta property="og:url" content={seo.url} />}
+      {seo.title && <meta property="og:title" content={seo.title} />}
+      {seo.description && <meta property="og:description" content={seo.description} />}
     </Helmet>
   );
 };
@@ -55,5 +55,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   title: '',
-  description: ''
+  description: '',
 };
+
+export default SEO;

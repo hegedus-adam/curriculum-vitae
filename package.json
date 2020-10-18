@@ -7,7 +7,8 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint src/ --ext .js,.jsx",
+    "format": "prettier --write \"**/*.{json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -17,11 +18,17 @@
     "gatsby": "^2.24.80",
     "gatsby-plugin-sass": "^2.3.17",
     "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4",
     "prettier": "^2.1.2"
   },
   "repository": {
