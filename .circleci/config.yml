@@ -4,4 +4,12 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
+      - lint
+jobs:
+  lint:
+    steps:
+      - checkout
+      - node:
+        steps:
+          - run: npm ci
+      - run: npm run lint
