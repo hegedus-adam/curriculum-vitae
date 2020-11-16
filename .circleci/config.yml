@@ -5,10 +5,19 @@ workflows:
   node-tests:
     jobs:
       - lint
+      - build
 jobs:
   lint:
     executor: node/default
     steps:
       - checkout
       - node/install-packages
+      - run: npm run clean
       - run: npm run lint
+  build:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages
+      - run: npm run clean
+      - run: npm run build
